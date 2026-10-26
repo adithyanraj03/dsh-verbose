@@ -12,7 +12,8 @@ this is that document applied to this plugin.
 the `dsh-plugin` topic, the releases ship `plugin.tgz` (so the entry carries `tarball:` and
 `icon:`), and the entry file is on the fork branch `add-dsh-verbose`. The PR opens
 2026-10-28 — the repo was created 2026-10-26 21:49 UTC and must be a day old. npm
-publishing is independent of the listing and is still pending (`npm login`).
+publishing is independent of the listing and is done (`dsh-verbose@0.8.2` on the
+registry, verified 2026-10-27).
 
 ---
 
