@@ -3,9 +3,12 @@
 Everything needed to take this folder from local to installable, in the order the steps
 actually depend on each other.
 
-**Status (2026-10-27):** built and mounted locally as `link:C:/Users/adith/.dsh-n/plugins/dsh-verbose`
-in the `web` profile. Not on npm, no GitHub repo yet, nothing in the marketplace — those are
-the steps below, in order.
+**Status (2026-10-27):** mounted locally as `link:C:/Users/adith/.dsh-n/plugins/dsh-verbose`
+in the `web` profile. The GitHub repo is live with signed history, tags and releases
+(`v0.8.1`, `v0.8.2`, each shipping `plugin.tgz`), the GitHub Pages site is up at the
+`homepage` URL, and the marketplace entry is staged on the fork branch `add-dsh-verbose`
+— the PR opens on 2026-10-28, one day after the repo was created. npm: the stored token
+was stale; `npm login` (2FA) then `npm publish --access public`.
 
 ---
 
@@ -52,9 +55,9 @@ npm install
 npm test
 ```
 
-`npm test` runs `node tests/harness.mjs`, which needs nothing but Node: it evaluates the real
-`client.js` against a shim and checks 40+ behaviours, including that the three slot names are
-the ones dsh publishes.
+`npm test` runs `node tests/client.test.mjs && node tests/classify.test.mjs`, which needs
+nothing but Node: it evaluates the real `client.js` against a shim and checks 49 behaviours,
+including that the three slot names are the ones dsh publishes.
 
 Then install it into a real dsh **straight from GitHub**, before npm knows about it:
 
