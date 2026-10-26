@@ -720,6 +720,37 @@ const EXTRA_PREFS = { metrics: true, rawTurn: false, foldAfter: "completion", vi
      * Restoring focus with `preventScroll` is the actual fix; the blink of a
      * focus ring is not worth trading for a stolen Enter key.
      */
+    /**
+     * Click a disclosure row without letting it take focus.
+     *
+     * dsh's rows call `event.currentTarget.focus()` inside their handler. Focus
+     * moves the scrollport to the focused element, so during a live generation
+     * — where every arriving tool call triggers a pass — clicking a row above
+     * the reader yanked the transcript up to it. Restoring focus afterwards is
+     * too late: the scroll already happened. Shadowing `focus` on that one
+     * element for the duration of the click removes the cause.
+     */
+    function clickQuietly(row) {
+      const original = row.focus;
+      let shadowed = false;
+      try {
+        row.focus = () => {};
+        shadowed = true;
+      } catch (error) {
+        /* a frozen element cannot be shadowed; the restore below still helps */
+      }
+      try {
+        row.click();
+      } finally {
+        if (shadowed) {
+          try {
+            row.focus = original;
+          } catch (error) {
+            /* the instance keeps the no-op; it unmounts with the row */
+          }
+        }
+      }
+    }
     function clickingWithoutFocus(work) {
       const previous = document.activeElement;
       work();
@@ -764,7 +795,7 @@ const EXTRA_PREFS = { metrics: true, rawTurn: false, foldAfter: "completion", vi
             if (row.getAttribute("aria-expanded") !== wanted) continue;
             if (active[categoryOf(row)] !== true) continue;
             try {
-              row.click();
+              clickQuietly(row);
             } catch (error) {
               /* a row mid-unmount is not an error worth surfacing */
             }
@@ -810,7 +841,7 @@ const EXTRA_PREFS = { metrics: true, rawTurn: false, foldAfter: "completion", vi
             const wanted = expanded ? (settled && shouldClose(row) ? false : undefined) : shouldOpen(row) ? true : undefined;
             if (wanted === undefined) continue;
             try {
-              row.click();
+              clickQuietly(row);
               this.flash(row);
               clicked += 1;
             } catch (error) {

@@ -190,6 +190,7 @@ const missingDefaults = ["thinking", "tools", "terminal", "groups"].filter(
 check("every category is on by default, so the dialog and the engine agree", missingDefaults.length === 0, missingDefaults.join(", "));
 check("the nested step-group rows are part of the row query", source.includes("[data-process-activity][aria-expanded]"));
 check("programmatic clicks give the keyboard back", source.includes("clickingWithoutFocus") && source.includes("preventScroll: true"));
+check("a click cannot scroll the transcript to the row", source.includes("function clickQuietly") && source.includes("row.focus = () => {}"));
 
 // Viewport-scoped expansion: the engine must know how to expand what is on
 // screen, collapse what is not, and notice scrolling.

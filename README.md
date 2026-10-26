@@ -125,10 +125,15 @@ scroll position in the same commit.
 
 ### Keyboard focus
 
-dsh's own disclosure rows call `focus()` inside their click handler, so a programmatic click
-used to park focus on a row: the next Enter re-toggled that row instead of sending the message,
-and the focus call scrolled the transcript to wherever the row lived. Every programmatic click
-now restores the previous focus with `preventScroll`, so Enter always reaches the composer.
+dsh's own disclosure rows call `focus()` inside their click handler, which moves the scrollport
+to the focused element. Two things follow from that: a synthetic click used to park focus on a
+row (the next Enter re-toggled it instead of sending), and — during a live generation, where
+every arriving tool call triggers a pass — clicking a row above the reader yanked the transcript
+up to it.
+
+The fix attacks the cause and then the symptom: for the duration of each programmatic click the
+row's `focus` is shadowed with a no-op, so focus never moves and nothing scrolls; afterwards any
+focus that still changed is restored with `preventScroll`.
 
 ### The turn footer (new in this port)
 
