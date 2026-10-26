@@ -166,12 +166,21 @@ one of them.
 
 Taken from a live dsh session, not mocked:
 
-| | |
-|---|---|
-| ![Session menu](assets/menu.png) | **The shipped menu, extended.** Download session log and Feedback are untouched; our two rows are appended below them. |
-| ![Transcript view submenu](assets/menu-submenu.png) | **Per-chat Normal/Verbose.** The tick shows this chat's current view. |
-| ![Verbose settings](assets/settings.png) | **The dialog.** What Verbose expands, the expansion scope, the turn footer, and the fold choice. |
-| ![Verbose transcript](assets/transcript.png) | **A Verbose chat.** Step groups and reasoning open as the reader scrolls. |
+![Session menu](assets/menu.png)
+
+**The shipped menu, extended.** Download session log and Feedback are untouched; our two rows are appended below them.
+
+![Transcript view submenu](assets/menu-submenu.png)
+
+**Per-chat Normal/Verbose.** The tick shows this chat's current view.
+
+![Verbose settings](assets/settings.png)
+
+**The dialog.** What Verbose expands, the expansion scope, the turn footer, and the fold choice.
+
+![Verbose transcript](assets/transcript.png)
+
+**A Verbose chat.** Step groups and reasoning open as the reader scrolls.
 
 ## Compatibility
 
