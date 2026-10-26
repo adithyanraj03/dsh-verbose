@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-label="dsh-verbose">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#191A1E"/>
+      <stop offset="1" stop-color="#101114"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4F9BFB"/>
+      <stop offset="1" stop-color="#7BB8FF"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.14" cy="0.2" r="0.9">
+      <stop offset="0" stop-color="#4F9BFB" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#4F9BFB" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="320" fill="url(#bg)"/>
+  <rect width="1280" height="320" fill="url(#glow)"/>
+  <rect x="0" y="0" width="7" height="320" fill="url(#accent)"/>
+
+  <g font-family="Segoe UI, Inter, system-ui, sans-serif">
+    <text x="88" y="132" font-size="62" font-weight="700" fill="#F4F5F7" letter-spacing="-1">dsh-verbose</text>
+    <text x="90" y="180" font-size="25" fill="#A7ACB4">Granular work-details controls for the dsh transcript</text>
+
+    <g font-size="18" fill="#CFE0FA">
+      <rect x="90" y="216" width="176" height="40" rx="20" fill="none" stroke="#4F9BFB" stroke-opacity="0.55"/>
+      <text x="112" y="242">4 display modes</text>
+
+      <rect x="282" y="216" width="188" height="40" rx="20" fill="none" stroke="#4F9BFB" stroke-opacity="0.55"/>
+      <text x="304" y="242">collapse timing</text>
+
+      <rect x="486" y="216" width="160" height="40" rx="20" fill="none" stroke="#4F9BFB" stroke-opacity="0.55"/>
+      <text x="508" y="242">turn metrics</text>
+
+      <rect x="662" y="216" width="190" height="40" rx="20" fill="none" stroke="#4F9BFB" stroke-opacity="0.55"/>
+      <text x="684" y="242">raw turn JSON</text>
+
+      <rect x="868" y="216" width="286" height="40" rx="20" fill="none" stroke="#4F9BFB" stroke-opacity="0.55"/>
+      <text x="890" y="242">hide reasoning / tool output</text>
+    </g>
+  </g>
+
+  <g transform="translate(1080 60)" opacity="0.95">
+    <rect x="0" y="0" width="120" height="16" rx="8" fill="#E8EAED" fill-opacity="0.9"/>
+    <rect x="0" y="30" width="96" height="16" rx="8" fill="#E8EAED" fill-opacity="0.62"/>
+    <rect x="0" y="60" width="120" height="16" rx="8" fill="#E8EAED" fill-opacity="0.62"/>
+    <rect x="0" y="90" width="68" height="16" rx="8" fill="#4F9BFB"/>
+    <circle cx="140" cy="10" r="7" fill="#4F9BFB"/>
+    <circle cx="140" cy="40" r="7" fill="#4F9BFB" fill-opacity="0.66"/>
+    <circle cx="140" cy="70" r="7" fill="#4F9BFB" fill-opacity="0.4"/>
+  </g>
+</svg>

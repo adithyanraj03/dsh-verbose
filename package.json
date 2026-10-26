@@ -1,0 +1,82 @@
+{
+  "name": "dsh-verbose",
+  "version": "0.8.1",
+  "description": "A session-header 3-dots menu: download the session log, switch each chat's transcript between Normal and Verbose, and define what Verbose expands (thinking blocks, tool calls, terminal output).",
+  "icon": "assets/icon.png",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "assets/icon.png",
+    "assets/banner-dark.png",
+    "assets/banner-light.png",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE",
+    "dsh.plugin.json",
+    "screenshots.json",
+    "MARKETPLACE.md",
+    "PUBLISHING.md",
+    "tests/client.test.mjs",
+    "tests/classify.test.mjs",
+    "assets/menu.png",
+    "assets/settings.png",
+    "assets/transcript.png",
+    "assets/menu-submenu.png"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-api-remotes"
+      ]
+    }
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-typert-protocol": "^0.2.1-rc.3"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-typert-protocol": ">=0.1.0-rc.6"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-typert-protocol": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "test": "node tests/client.test.mjs && node tests/classify.test.mjs"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "dsh",
+    "transcript",
+    "verbose",
+    "session-menu",
+    "ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adithyanraj03/dsh-verbose.git"
+  },
+  "homepage": "https://adithyanraj03.github.io/dsh-verbose/",
+  "bugs": {
+    "url": "https://github.com/adithyanraj03/dsh-verbose/issues"
+  },
+  "author": "Adithya N Raj (adithyanraj03)",
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT"
+}

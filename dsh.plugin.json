@@ -1,0 +1,12 @@
+{
+  "id": "dsh-verbose",
+  "version": "0.8.1",
+  "main": "./index.js",
+  "description": "A session-header 3-dots menu: download the session log, switch each chat's transcript between Normal and Verbose, and define what Verbose expands (thinking blocks, tool calls, terminal output).",
+  "engines": {
+    "dsh": ">=0.2.0"
+  },
+  "client": {
+    "main": "./client.js"
+  }
+}

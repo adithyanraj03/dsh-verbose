@@ -1,0 +1,9 @@
+# dsh-verbose: the header 3-dots menu.
+#
+# Only a mount. The built-in `session-log-download` row is deliberately LEFT
+# ENABLED: the menu shadows its button in the slot (same entry id, lower
+# priority) and drives its download through the same /export command. Disabling
+# that row would take the button and the download away together.
+- insert:
+    - id: verbose
+      name: 'dsh-verbose'
