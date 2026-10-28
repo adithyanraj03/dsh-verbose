@@ -8,12 +8,12 @@ Its rules are at
 [contributing.md](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/main/contributing.md);
 this is that document applied to this plugin.
 
-**Status (2026-10-27):** entry staged, PR pending the repo-age rule. The repo exists with
-the `dsh-plugin` topic, the releases ship `plugin.tgz` (so the entry carries `tarball:` and
-`icon:`), and the entry file is on the fork branch `add-dsh-verbose`. The PR opens
-2026-10-28 — the repo was created 2026-10-26 21:49 UTC and must be a day old. npm
-publishing is independent of the listing and is done (`dsh-verbose@0.8.2` on the
-registry, verified 2026-10-27).
+**Status (2026-10-28):** PR open and green —
+[awesome-dsh-plugin#9993](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/9993),
+both CI checks pass (`Submission gate`, `check`), mergeable, awaiting maintainer review.
+The entry carries `tarball:` (releases ship `plugin.tgz`) and `icon:`; the description is
+byte-identical to `package.json`. npm is independent of the listing and is done
+(`dsh-verbose@0.8.2` on the registry, verified 2026-10-27).
 
 ---
 
@@ -25,7 +25,7 @@ Their CI checks these in order, and the first two are where most submissions are
 |---|---|
 | `dsh.bundle` declared in `package.json` | ✅ `{"bundle": {"patch": "./cordis.patch.yml"}}` |
 | a real `cordis.patch.yml` next to it | ✅ inserts `id: verbose` |
-| repository at least **1 day old** | ⏳ created 2026-10-26 21:49 UTC — PR opens 2026-10-28 |
+| repository at least **1 day old** | ✅ created 2026-10-26 21:49 UTC, PR opened 2026-10-28 — gate passed |
 | `dsh-plugin` topic on the repo | ✅ set at creation (plus `dsh`, `deepseek-harness`, `transcript`, `verbose`, `session-menu`, `ui`) |
 | real working code, not a placeholder | ✅ `npm test` (49 checks) passes |
 | description matches behaviour exactly | ✅ keep it that way if you edit it |
