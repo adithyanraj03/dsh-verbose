@@ -13,7 +13,7 @@ this is that document applied to this plugin.
 both CI checks pass (`Submission gate`, `check`), mergeable, awaiting maintainer review.
 The entry carries `tarball:` (releases ship `plugin.tgz`) and `icon:`; the description is
 byte-identical to `package.json`. npm is independent of the listing and is done
-(`dsh-verbose@0.8.2` on the registry, verified 2026-10-27).
+(`dsh-verbose@0.8.3` release).
 
 ---
 

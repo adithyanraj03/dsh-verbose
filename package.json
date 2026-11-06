@@ -1,6 +1,6 @@
 {
   "name": "dsh-verbose",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "A session-header 3-dots menu: download the session log, switch each chat's transcript between Normal and Verbose, and define what Verbose expands (thinking blocks, tool calls, terminal output).",
   "icon": "assets/icon.png",
   "type": "module",

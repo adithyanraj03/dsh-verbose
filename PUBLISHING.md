@@ -5,10 +5,9 @@ actually depend on each other.
 
 **Status (2026-10-27):** mounted locally as `link:C:/Users/adith/.dsh-n/plugins/dsh-verbose`
 in the `web` profile. The GitHub repo is live with signed history, tags and releases
-(`v0.8.1`, `v0.8.2`, each shipping `plugin.tgz`), the GitHub Pages site is up at the
+(`v0.8.1`, `v0.8.2`, `v0.8.3`, each shipping `plugin.tgz`), the GitHub Pages site is up at the
 `homepage` URL, and the marketplace entry is staged on the fork branch `add-dsh-verbose`
-— the PR opens on 2026-10-28, one day after the repo was created. npm: `dsh-verbose@0.8.2`
-is published (verified on the registry; bare-name `pnpm add dsh-verbose` resolves).
+— the PR was opened on 2026-10-28 and CI is green. npm: `dsh-verbose@0.8.3` release.
 
 ---
 
