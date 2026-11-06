@@ -2012,7 +2012,7 @@ const EXTRA_PREFS = { metrics: true, rawTurn: false, foldAfter: "completion", vi
      * and append two rows to it when it opens. The rows wear a native row's
      * class, so hover/focus/typography come from dsh rather than a look-alike
      * stylesheet, and the guard only ever touches a menu whose own rows mention
-     * session log or feedback.
+     * session log (excluding user account menus with sign out).
      * ================================================================== */
     const MENU_ATTR = "data-dshvm-menu";
     const ROW_ATTR = "data-dshvm-row";
@@ -2035,7 +2035,8 @@ const EXTRA_PREFS = { metrics: true, rawTurn: false, foldAfter: "completion", vi
     /** @param {Element} menu - a role=menu element. @returns {boolean} the shipped session menu. */
     function isSessionMenu(menu) {
       const labels = menuLabels(menu).join(" | ").toLowerCase();
-      return labels.includes("session log") || labels.includes("feedback");
+      if (labels.includes("sign out") || labels.includes("退出") || labels.includes("log out")) return false;
+      return labels.includes("session log") || labels.includes("session 日志");
     }
 
     /** The check mark a native selected row would show. */

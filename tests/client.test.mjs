@@ -142,6 +142,7 @@ if (typeof rendered?.type === "function") tree = rendered.type(rendered.props);
 const flat = JSON.stringify(tree);
 check("the rows are injected into the shipped menu, not slotted", source.includes("function augmentMenu") && source.includes("function watchSessionMenu"));
 check("the injection is guarded to that menu only", source.includes("function isSessionMenu") && source.includes('"session log"'));
+check("user settings / account menu is excluded from session menu injection", source.includes("function isSessionMenu") && source.includes('"sign out"') && !source.includes('labels.includes("feedback")'));
 check("the dialog opens on an event, so it stays React", source.includes('"dshvm:open-dialog"') && source.includes("function DialogHost"));
 
 const at = Date.parse("2026-10-27T00:00:00Z");
